@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Player" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = 1
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
