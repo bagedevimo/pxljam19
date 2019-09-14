@@ -42,7 +42,7 @@
 5/region = Rect2( 0, 288, 192, 32 )
 5/tile_mode = 2
 5/autotile/icon_coordinate = Vector2( 0, 0 )
-5/autotile/tile_size = Vector2( 32, 30.52 )
+5/autotile/tile_size = Vector2( 32, 32 )
 5/autotile/spacing = 0
 5/autotile/occluder_map = [  ]
 5/autotile/navpoly_map = [  ]
