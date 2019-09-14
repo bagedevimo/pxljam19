@@ -21,7 +21,7 @@ points = PoolVector2Array( 27.4311, 0.798958, 28.777, 6.72083, 27.4311, 12.6427,
 points = PoolVector2Array( 5.65454, 22.4913, 16.1201, 21.3284, 26.198, 22.2975, 25.229, 27.3364, 16.5077, 30.0497, 7.01117, 27.3364 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 4, 18, 28, 18, 28, 30, 4, 30 )
+points = PoolVector2Array( 4.04828, 7.7551, 27.826, 7.7551, 28, 30, 4, 30 )
 
 [resource]
 3/name = "Ground"
@@ -145,7 +145,7 @@ points = PoolVector2Array( 4, 18, 28, 18, 28, 30, 4, 30 )
 7/z_index = 0
 8/name = "Box"
 8/texture = ExtResource( 1 )
-8/tex_offset = Vector2( 16, 16 )
+8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 256, 288, 32, 32 )
 8/tile_mode = 0

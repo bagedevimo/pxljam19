@@ -26,6 +26,7 @@ tile_data = PoolIntArray( 196612, 5, 2, 458759, 5, 2, 851969, 5, 2 )
 [node name="Player" parent="Obstacles" groups=[
 "player",
 ] instance=ExtResource( 2 )]
+editor/display_folded = true
 z_index = -5
 
 [node name="Camera2D" type="Camera2D" parent="Obstacles/Player"]
@@ -39,5 +40,5 @@ drag_margin_bottom = 0.0
 [node name="Barrell" parent="." instance=ExtResource( 3 )]
 position = Vector2( 204.363, 374.417 )
 
-[node name="Barrell" parent="Barrell" instance=ExtResource( 3 )]
-position = Vector2( 107.059, 0 )
+[node name="Barrell2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 311.422, 374.417 )
