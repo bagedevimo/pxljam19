@@ -30,6 +30,14 @@ z_index = -5
 life_expectancy = 3
 year_in_seconds = 2
 
+[node name="Camera2D" type="Camera2D" parent="Obstacles/Player"]
+current = true
+smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
 [node name="Barrell" parent="." instance=ExtResource( 3 )]
 position = Vector2( 204.363, 374.417 )
 
