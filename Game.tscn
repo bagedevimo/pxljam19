@@ -55,3 +55,4 @@ position = Vector2( 311.422, 374.417 )
 
 [node name="Tree" parent="." instance=ExtResource( 4 )]
 position = Vector2( 470.694, 487.109 )
+z_index = 10
