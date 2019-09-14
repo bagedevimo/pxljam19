@@ -1,12 +1,11 @@
 extends Node
 
-const BEFORE_DEATH = "before_death"
 const ON_DEATH = "on_death"
-const AFTER_DEATH = "after_death"
+const ON_BIRTH = "on_birth"
 
 var events = {}
 
-func trigger_event(event_name, args):
+func trigger_event(event_name, args = null):
 	if !events.has(event_name):
 		return
 
