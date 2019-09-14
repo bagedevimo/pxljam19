@@ -6,6 +6,12 @@ extends KinematicBody2D
 # Member variables
 const MOTION_SPEED = 360 # Pixels/second
 
+var focus = null
+
+func _process(delta):
+	if Input.is_action_just_released("ui_select"):
+		if self.focus && self.focus.has_method("interact"):
+			self.focus.interact();
 
 func _physics_process(delta):
 	var motion = Vector2()
@@ -22,3 +28,11 @@ func _physics_process(delta):
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
+
+
+func set_focus(target):
+	self.focus = target
+	
+func clear_focus_where(target):
+	if self.focus == target:
+		self.focus = null
