@@ -5,7 +5,7 @@
 [ext_resource path="res://tileset.tres" type="TileSet" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 94.138
+radius = 43.6539
 
 [node name="Barrell" type="Node2D"]
 script = ExtResource( 1 )

@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Interactable.gd" type="Script" id=1]
+[ext_resource path="res://pixel_style7.png" type="Texture" id=2]
 
 [node name="Area2D" type="Area2D"]
 collision_layer = 524288
 script = ExtResource( 1 )
+
+[node name="Attention" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -16 )
+z_index = 9
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 129, 1, 14, 14 )
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
