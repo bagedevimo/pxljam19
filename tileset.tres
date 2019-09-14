@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=3 format=2]
 
 [ext_resource path="res://RPGpack_sheet_32x32.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 5.65454, 22.4913, 16.1201, 21.3284, 26.198, 22.2975, 25.229, 27.3364, 16.5077, 30.0497, 7.01117, 27.3364 )
 
 [resource]
 3/name = "Ground"
@@ -49,7 +52,13 @@
 5/autotile/z_index_map = [  ]
 5/occluder_offset = Vector2( 0, 0 )
 5/navigation_offset = Vector2( 0, 0 )
-5/shapes = [  ]
+5/shapes = [ {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 5/z_index = 0
 6/name = "Tree"
 6/texture = ExtResource( 1 )
