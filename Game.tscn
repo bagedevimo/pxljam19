@@ -7,20 +7,21 @@
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 128, 128 )
+cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 128
 cell_clip_uv = true
 format = 1
-tile_data = PoolIntArray( 0, 0, 65537, 1, 0, 65537, 2, 0, 65537, 3, 0, 65537, 4, 0, 65537, 5, 0, 65537, 6, 0, 65537, 7, 0, 65537, 65536, 0, 65537, 65537, 0, 65537, 65538, 0, 65537, 65539, 0, 65537, 65540, 0, 65537, 65541, 0, 65537, 65542, 0, 65537, 65543, 0, 65537, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65537, 131077, 0, 65537, 131078, 0, 65537, 131079, 0, 65537, 196608, 0, 65537, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65537, 196613, 0, 65537, 196614, 0, 65537, 196615, 0, 65537, 262144, 0, 65537, 262145, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65537, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 65537, 917529, 0, 0 )
+tile_data = PoolIntArray( 196608, 0, 0, 262144, 0, 0, 262150, 0, 0, 917529, 0, 0 )
 
 [node name="Obstacles" type="TileMap" parent="."]
 z_index = 10
 tile_set = ExtResource( 1 )
-cell_size = Vector2( 128, 128 )
-cell_quadrant_size = 128
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 32
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 4, 3, 1, 65538, 3, 2, 131077, 2, 0, 131078, 3, 4, 196610, 2, 2, 196614, 3, 4, 262148, 2, 5 )
+tile_data = PoolIntArray( 131077, 2, 0, 196610, 2, 2, 262148, 2, 5 )
 
 [node name="Player" parent="Obstacles" instance=ExtResource( 2 )]
 z_index = -5
+
