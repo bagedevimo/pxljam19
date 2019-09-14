@@ -33,7 +33,7 @@ func _process(delta):
 func age():
 	return floor(seconds_alive / year_in_seconds)
 
-func _ready():
+func _ready():		
 	EventBus.register_listener(self, EventBus.BEFORE_DEATH)
 
 func handle_before_death(args):
@@ -46,12 +46,16 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_up"):
 		motion += Vector2(0, -1)
+		$Sprite.region_rect.position.x = 64
 	if Input.is_action_pressed("ui_down"):
 		motion += Vector2(0, 1)
+		$Sprite.region_rect.position.x = 96
 	if Input.is_action_pressed("ui_left"):
 		motion += Vector2(-1, 0)
+		$Sprite.region_rect.position.x = 32
 	if Input.is_action_pressed("ui_right"):
 		motion += Vector2(1, 0)
+		$Sprite.region_rect.position.x = 0
 	
 	motion = motion.normalized() * MOTION_SPEED
 
