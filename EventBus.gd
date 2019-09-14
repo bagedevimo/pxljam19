@@ -1,8 +1,15 @@
 extends Node
 
+const BEFORE_DEATH = "before_death"
+const ON_DEATH = "on_death"
+const AFTER_DEATH = "after_death"
+
 var events = {}
 
 func trigger_event(event_name, args):
+	if !events.has(event_name):
+		return
+
 	for listener in events[event_name]:
 		listener.call("handle_" + event_name, args)
 

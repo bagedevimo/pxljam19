@@ -8,16 +8,38 @@ const MOTION_SPEED = 360 # Pixels/second
 
 var focus = null
 
+export (int) var life_expectancy = 6
+export (int) var year_in_seconds = 3
+
+var previous_age = 0
+var seconds_alive = 0
+
 func _process(delta):
 	if Input.is_action_just_released("ui_select"):
 		if self.focus && self.focus.has_method("interact"):
 			self.focus.interact();
 
+	seconds_alive += delta
+
+	if age() != previous_age:
+		previous_age = age()
+		print("I'm ", previous_age, " years old now")
+
+	if age() >= life_expectancy:
+		EventBus.trigger_event(EventBus.BEFORE_DEATH, self)
+		EventBus.trigger_event(EventBus.ON_DEATH, self)
+		EventBus.trigger_event(EventBus.AFTER_DEATH, self)
+
+func age():
+	return floor(seconds_alive / year_in_seconds)
+
 func _ready():
-	EventBus.register_listener(self, "before_death")
+	EventBus.register_listener(self, EventBus.BEFORE_DEATH)
 
 func handle_before_death(args):
 	print("I'm dying here...", args)
+	seconds_alive = 0
+	print("I'm reborn....", args)
 
 func _physics_process(delta):
 	var motion = Vector2()
