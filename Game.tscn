@@ -21,7 +21,6 @@ cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( 131077, 2, 0, 196610, 2, 2, 262148, 2, 5 )
 
 [node name="Player" parent="Obstacles" groups=[
 "player",
