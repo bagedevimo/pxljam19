@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Barrell.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -43,8 +44,11 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Barrell" parent="." instance=ExtResource( 3 )]
+[node name="Barrell1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 204.363, 374.417 )
 
 [node name="Barrell2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 311.422, 374.417 )
+
+[node name="Tree" parent="." instance=ExtResource( 4 )]
+position = Vector2( 470.694, 487.109 )
