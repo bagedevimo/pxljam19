@@ -7,7 +7,6 @@
 [ext_resource path="res://Gate.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Node2D"]
-position = Vector2( 351.275, 82.7717 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
@@ -63,4 +62,3 @@ z_index = 10
 [node name="Gate" parent="." instance=ExtResource( 5 )]
 position = Vector2( 275.616, 201.663 )
 z_index = 10
-
