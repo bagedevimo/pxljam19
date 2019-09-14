@@ -8,8 +8,8 @@ const MOTION_SPEED = 360 # Pixels/second
 
 var focus = null
 
-export (int) var life_expectancy = 6
-export (int) var year_in_seconds = 3
+export (int) var life_expectancy = 55
+export (int) var year_in_seconds = 10
 
 var previous_age = 0
 var seconds_alive = 0
