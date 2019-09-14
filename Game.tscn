@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Barrell.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Gate.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -60,5 +64,9 @@ position = Vector2( 470.694, 487.109 )
 z_index = 10
 
 [node name="Gate" parent="." instance=ExtResource( 5 )]
+modulate = Color( 1.3, 1.2, 1.5, 1 )
 position = Vector2( 275.616, 201.663 )
 z_index = 10
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
