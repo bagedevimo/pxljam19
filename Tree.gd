@@ -14,7 +14,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func interact():
+func interact(actor):
 	$AnimationPlayer.play("Shake")
 	
 	self.interacts += 1

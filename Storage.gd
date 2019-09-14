@@ -14,6 +14,7 @@ extends Node2D
 var storage = {}
 
 func store(key, amount):
+	#print("Storing ", key, " (", amount, ")")
 	if !storage.has(key):
 		storage[key] = amount
 	else:

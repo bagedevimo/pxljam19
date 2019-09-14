@@ -49,4 +49,3 @@ texture = ExtResource( 3 )
 offset = Vector2( 0, -30 )
 region_enabled = true
 region_rect = Rect2( 0, 320, 32, 64 )
-
