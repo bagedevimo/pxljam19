@@ -70,3 +70,6 @@ z_index = 10
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.164706, 0.164706, 0.164706, 1 )
