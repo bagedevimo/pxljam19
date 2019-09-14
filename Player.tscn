@@ -4,8 +4,9 @@
 [ext_resource path="res://Character.png" type="Texture" id=2]
 [ext_resource path="res://Storage.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 9.94175
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 9.65291
+height = 2.48412
 
 [sub_resource type="Animation" id=2]
 resource_name = "Birth"
@@ -73,8 +74,8 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.56543, 5.78017 )
-shape = SubResource( 1 )
+position = Vector2( 0.424057, 3.09433 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
