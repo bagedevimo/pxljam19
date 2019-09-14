@@ -13,9 +13,15 @@ func _process(delta):
 		if self.focus && self.focus.has_method("interact"):
 			self.focus.interact();
 
+func _ready():
+	EventBus.register_listener(self, "before_death")
+
+func handle_before_death(args):
+	print("I'm dying here...", args)
+
 func _physics_process(delta):
 	var motion = Vector2()
-	
+
 	if Input.is_action_pressed("ui_up"):
 		motion += Vector2(0, -1)
 	if Input.is_action_pressed("ui_down"):
@@ -27,12 +33,11 @@ func _physics_process(delta):
 	
 	motion = motion.normalized() * MOTION_SPEED
 
-	move_and_slide(motion)
-
+	return move_and_slide(motion)
 
 func set_focus(target):
 	self.focus = target
-	
+
 func clear_focus_where(target):
 	if self.focus == target:
 		self.focus = null

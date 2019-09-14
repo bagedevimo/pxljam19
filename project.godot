@@ -19,6 +19,10 @@ config/name="pxljam19"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+EventBus="*res://EventBus.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
