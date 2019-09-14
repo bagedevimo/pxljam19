@@ -59,7 +59,10 @@ func _physics_process(delta):
 	
 	motion = motion.normalized() * MOTION_SPEED
 
-	return move_and_slide(motion)
+	move_and_slide(motion)
+	
+	position.x = clamp(position.x, $Camera2D.limit_left, $Camera2D.limit_right)
+	position.y = clamp(position.y, $Camera2D.limit_top,  $Camera2D.limit_bottom)
 
 func set_focus(target):
 	self.focus = target
