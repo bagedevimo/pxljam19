@@ -6,6 +6,7 @@
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node2D"]
+position = Vector2( 351.275, 82.7717 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
