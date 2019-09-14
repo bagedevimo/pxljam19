@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Barrell.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Wolf.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -61,3 +62,6 @@ z_index = 10
 [node name="Gate" parent="." instance=ExtResource( 5 )]
 position = Vector2( 275.616, 201.663 )
 z_index = 10
+
+[node name="Wolf" parent="." instance=ExtResource( 6 )]
+position = Vector2( 731.925, 561.661 )
