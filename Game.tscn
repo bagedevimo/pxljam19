@@ -30,3 +30,4 @@ z_index = -5
 
 [node name="Barrell" parent="." instance=ExtResource( 3 )]
 position = Vector2( 204.363, 374.417 )
+
