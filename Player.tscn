@@ -5,12 +5,11 @@
 [ext_resource path="res://Storage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Character/Girl.png" type="Texture" id=4]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 9.65291
-height = 2.48412
+[sub_resource type="CircleShape2D" id=10]
+radius = 6.0
 
-[sub_resource type="OccluderPolygon2D" id=4]
-polygon = PoolVector2Array( 11.6245, 2.64802, 10.6973, 14.2739, -9.70159, 14.5592, -10.4148, 2.64802 )
+[sub_resource type="OccluderPolygon2D" id=9]
+polygon = PoolVector2Array( 34.1071, 28.3005, 37.2702, 27.0352, 38.0293, 24.2517, 37.2069, 21.6579, 34.0438, 20.2661, 30.9439, 21.4681, 30.1215, 24.3149, 30.7542, 27.0352 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Birth"
@@ -85,8 +84,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -19.0209 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.424057, 3.09433 )
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -94,10 +92,12 @@ __meta__ = {
 [node name="Storage" parent="." instance=ExtResource( 3 )]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 4 )
+position = Vector2( -34.0352, -24.2928 )
+occluder = SubResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
+offset = Vector2( 0, -12 )
 region_enabled = true
 region_rect = Rect2( 0, 32, 32, 32 )
 
