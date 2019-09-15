@@ -4,7 +4,7 @@ extends KinematicBody2D
 # move_and_slide works.
 
 # Member variables
-const MOTION_SPEED = 360 # Pixels/second
+const MOTION_SPEED = 140 # Pixels/second
 const MAX_DIST = 65000
 
 var focusables = []
