@@ -9,6 +9,7 @@ extents = Vector2( 7.92542, 6.36963 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -48 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 576, 192, 64, 96 )
@@ -16,16 +17,20 @@ region_rect = Rect2( 576, 192, 64, 96 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -23.9935, 41.5274 )
+position = Vector2( -24, -7 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 24.0151, 41.5274 )
+position = Vector2( 24, -7 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -0.112534, 26.3079 )
+position = Vector2( 0.41996, 26.6629 )
 texture = ExtResource( 2 )
 color = Color( 1, 1, 1, 0.435294 )
 shadow_enabled = true
 shadow_buffer_size = 32
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
