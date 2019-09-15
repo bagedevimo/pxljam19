@@ -19,6 +19,8 @@ tracks/0/keys = {
 }
 
 [node name="Say" type="Node2D"]
+z_index = 100
+z_as_relative = false
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
