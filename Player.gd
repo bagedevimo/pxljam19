@@ -92,9 +92,9 @@ func _physics_process(delta):
 			Vector2(0, -1):
 				$AnimationPlayer.play("WalkNorth")
 			Vector2(-1, -1):
-				$AnimationPlayer.play("WalkWest")
-			Vector2(-1, 0):
 				$AnimationPlayer.play("WalkNorthWest")
+			Vector2(-1, 0):
+				$AnimationPlayer.play("WalkWest")
 			Vector2(1, 0):
 				$AnimationPlayer.play("WalkEast")
 	
