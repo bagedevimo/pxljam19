@@ -76,7 +76,7 @@ position = Vector2( 470.694, 487.109 )
 z_index = 10
 
 [node name="Gate" parent="." instance=ExtResource( 6 )]
-position = Vector2( 275.616, 201.663 )
+position = Vector2( 275.616, 191.333 )
 z_index = 10
 
 [node name="Wolf" parent="." instance=ExtResource( 7 )]

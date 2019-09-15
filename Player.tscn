@@ -5,19 +5,18 @@
 [ext_resource path="res://Storage.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Character/Girl.png" type="Texture" id=4]
 
-[sub_resource type="CircleShape2D" id=10]
+[sub_resource type="CircleShape2D" id=1]
 radius = 6.0
 
-[sub_resource type="OccluderPolygon2D" id=9]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 34.1071, 28.3005, 37.2702, 27.0352, 38.0293, 24.2517, 37.2069, 21.6579, 34.0438, 20.2661, 30.9439, 21.4681, 30.1215, 24.3149, 30.7542, 27.0352 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Birth"
-
 [sub_resource type="Animation" id=3]
+
+[sub_resource type="Animation" id=4]
 length = 0.3
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "WalkEast"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -47,8 +46,7 @@ tracks/0/keys = {
 "values": [ Rect2( 32, 0, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "WalkSouth"
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -84,7 +82,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -19.0209 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -93,19 +91,19 @@ __meta__ = {
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2( -34.0352, -24.2928 )
-occluder = SubResource( 9 )
+occluder = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 offset = Vector2( 0, -12 )
 region_enabled = true
-region_rect = Rect2( 0, 32, 32, 32 )
+region_rect = Rect2( 32, 64, 32, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Birth = SubResource( 2 )
-anims/Death = SubResource( 3 )
-anims/WalkEast = SubResource( 7 )
+anims/Birth = SubResource( 3 )
+anims/Death = SubResource( 4 )
+anims/WalkEast = SubResource( 5 )
 anims/WalkNorth = SubResource( 6 )
-anims/WalkSouth = SubResource( 5 )
+anims/WalkSouth = SubResource( 7 )
 anims/WalkWest = SubResource( 8 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
