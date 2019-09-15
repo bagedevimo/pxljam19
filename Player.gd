@@ -46,7 +46,6 @@ func rebirth():
 
 func handle_on_death(args):
 	print("I'm dying....", args)
-	face_east()
 	$AnimationPlayer.play("Death")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -56,7 +55,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func handle_on_birth(args):
 	print("I'm reborn....", args)
 	position = get_node("../StartingPosition").position
-	$Sprite.rotation_degrees = 0
+
 	seconds_alive = 0
 	$AnimationPlayer.play("Birth")
 
@@ -65,16 +64,16 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_up"):
 		motion += Vector2(0, -1)
-		face_north()
+		$AnimationPlayer.play("WalkNorth")
 	if Input.is_action_pressed("ui_down"):
 		motion += Vector2(0, 1)
-		face_south()
+		$AnimationPlayer.play("WalkSouth")
 	if Input.is_action_pressed("ui_left"):
 		motion += Vector2(-1, 0)
-		face_west()
+		$AnimationPlayer.play("WalkWest")
 	if Input.is_action_pressed("ui_right"):
 		motion += Vector2(1, 0)
-		face_east()
+		$AnimationPlayer.play("WalkEast")
 	if Input.is_action_just_pressed("debug_rebirth"):
 		rebirth()
 	
@@ -121,15 +120,3 @@ func choose_focus():
 		
 		if new_interactable:
 			new_interactable.set_focused()
-
-func face_east():
-	$Sprite.region_rect.position.x = 0
-
-func face_west():
-	$Sprite.region_rect.position.x = 32
-
-func face_north():
-	$Sprite.region_rect.position.x = 64
-
-func face_south():
-	$Sprite.region_rect.position.x = 96
