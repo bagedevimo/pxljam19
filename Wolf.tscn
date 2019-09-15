@@ -20,12 +20,7 @@ shape = SubResource( 1 )
 texture = ExtResource( 2 )
 
 [node name="Say" parent="." instance=ExtResource( 3 )]
-visible = false
-margin_left = 5.18094
-margin_top = -73.4751
-margin_right = 45.1809
-margin_bottom = -33.4751
-text = ""
+position = Vector2( 0, -32.4661 )
 
 [node name="Interactable" parent="." instance=ExtResource( 4 )]
 
