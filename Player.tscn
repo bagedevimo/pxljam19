@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Say.tscn" type="PackedScene" id=2]
@@ -11,7 +11,7 @@ radius = 6.0
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 34.1071, 28.3005, 37.2702, 27.0352, 38.0293, 24.2517, 37.2069, 21.6579, 34.0438, 20.2661, 30.9439, 21.4681, 30.1215, 24.3149, 30.7542, 27.0352 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=3]
 resource_name = "Birth"
 length = 1.5
 tracks/0/type = "value"
@@ -112,34 +112,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=8]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 32, 64, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=9]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 64, 64, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=10]
+resource_name = "WalkNorthWest"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -153,7 +126,49 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 64, 32, 32 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 32, 64, 32, 32 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 64, 64, 32, 32 ) ]
+}
+
 [sub_resource type="Animation" id=11]
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 64, 32, 32 ) ]
+}
+
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -190,16 +205,17 @@ rotation = 25.1327
 texture = ExtResource( 4 )
 offset = Vector2( 0, -12 )
 region_enabled = true
-region_rect = Rect2( 64, 0, 32, 32 )
+region_rect = Rect2( 32, 0, 32, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Birth = SubResource( 12 )
+anims/Birth = SubResource( 3 )
 anims/Death = SubResource( 4 )
 anims/WalkEast = SubResource( 5 )
 anims/WalkNorth = SubResource( 6 )
 anims/WalkNorthEast = SubResource( 7 )
-anims/WalkSouth = SubResource( 8 )
-anims/WalkSouthEast = SubResource( 9 )
-anims/WalkSouthWest = SubResource( 10 )
-anims/WalkWest = SubResource( 11 )
+anims/WalkNorthWest = SubResource( 8 )
+anims/WalkSouth = SubResource( 9 )
+anims/WalkSouthEast = SubResource( 10 )
+anims/WalkSouthWest = SubResource( 11 )
+anims/WalkWest = SubResource( 12 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
