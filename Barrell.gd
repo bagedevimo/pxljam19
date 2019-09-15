@@ -12,5 +12,5 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func interact():
+func interact(actor):
 	print("Hello, I am a barrell!")
