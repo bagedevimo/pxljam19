@@ -69,19 +69,37 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_up"):
 		motion += Vector2(0, -1)
-		$AnimationPlayer.play("WalkNorth")
+#		$AnimationPlayer.play("WalkNorth")
 	if Input.is_action_pressed("ui_down"):
 		motion += Vector2(0, 1)
-		$AnimationPlayer.play("WalkSouth")
+#		$AnimationPlayer.play("WalkSouth")
 	if Input.is_action_pressed("ui_left"):
 		motion += Vector2(-1, 0)
-		$AnimationPlayer.play("WalkWest")
+#		$AnimationPlayer.play("WalkWest")
 	if Input.is_action_pressed("ui_right"):
 		motion += Vector2(1, 0)
-		$AnimationPlayer.play("WalkEast")
+#		$AnimationPlayer.play("WalkEast")
 	if Input.is_action_just_pressed("debug_rebirth"):
 		rebirth()
 	
+	match motion:
+		Vector2(1, 1):
+			$AnimationPlayer.play("WalkSouthEast")
+		Vector2(0, 1):
+			$AnimationPlayer.play("WalkSouth")
+		Vector2(-1, 1):
+			$AnimationPlayer.play("WalkSouthWest")
+		Vector2(1, -1):
+			$AnimationPlayer.play("WalkEast")
+		Vector2(0, -1):
+			$AnimationPlayer.play("WalkNorth")
+		Vector2(-1, -1):
+			$AnimationPlayer.play("WalkWest")
+		Vector2(-1, 0):
+			$AnimationPlayer.play("WalkWest")
+		Vector2(1, 0):
+			$AnimationPlayer.play("WalkEast")
+
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
