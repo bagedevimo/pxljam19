@@ -38,7 +38,9 @@ func interact(actor):
 		$Say.play_speech("Grrr")
 	elif pats < 5:
 		$Say.play_speech("Woof woof!")
-
+	elif pats > 5:
+		$Say.play_speech("Bark!")
+		
 	if pats == pats_required:
 		actor.find_node("Say").play_speech("Follow me friend!")
 		following_player = true
