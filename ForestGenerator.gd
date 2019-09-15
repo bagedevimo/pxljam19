@@ -2,7 +2,11 @@ extends Area2D
 
 export (int) var number_of_trees = 10
 
-var treeObj = preload("res://Tree.tscn")
+var treeObjs = [
+	preload("res://Tree.tscn"),
+	preload("res://TreeRed.tscn"),
+	preload("res://TreeBlue.tscn")
+]
 
 func _ready():
 	EventBus.register_listener(self, EventBus.ON_BIRTH)
@@ -15,6 +19,6 @@ func handle_on_birth(args):
 		var rand_x = randi() % int($Area.shape.radius)
 		var rand_y = randi() % int($Area.shape.radius)
 		
-		var tree = treeObj.instance()
+		var tree = treeObjs[randi() % treeObjs.size()].instance()
 		tree.position = Vector2(rand_x, rand_y)
 		$YSort.add_child(tree)
