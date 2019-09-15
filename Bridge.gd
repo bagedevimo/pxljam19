@@ -45,5 +45,3 @@ func interact(actor):
 		var tile = 10 if x < bridge_to else -1
 		
 		find_node("CoreBridge").set_cell(x, 0, tile, false, false, false, Vector2(1, 0))
-	
-	
