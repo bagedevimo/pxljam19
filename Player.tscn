@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Say.tscn" type="PackedScene" id=2]
@@ -47,6 +47,21 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
+resource_name = "WalkNorthEast"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 64, 0, 32, 32 ) ]
+}
+
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -60,8 +75,7 @@ tracks/0/keys = {
 "values": [ Rect2( 32, 64, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "WalkSouthEast"
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -75,8 +89,7 @@ tracks/0/keys = {
 "values": [ Rect2( 64, 64, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "WalkSouthWest"
+[sub_resource type="Animation" id=10]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -90,7 +103,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 64, 32, 32 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
 tracks/0/interp = 1
@@ -126,15 +139,16 @@ occluder = SubResource( 2 )
 texture = ExtResource( 4 )
 offset = Vector2( 0, -12 )
 region_enabled = true
-region_rect = Rect2( 64, 64, 32, 32 )
+region_rect = Rect2( 64, 0, 32, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Birth = SubResource( 3 )
 anims/Death = SubResource( 4 )
 anims/WalkEast = SubResource( 5 )
 anims/WalkNorth = SubResource( 6 )
-anims/WalkSouth = SubResource( 7 )
-anims/WalkSouthEast = SubResource( 8 )
-anims/WalkSouthWest = SubResource( 9 )
-anims/WalkWest = SubResource( 10 )
+anims/WalkNorthEast = SubResource( 7 )
+anims/WalkSouth = SubResource( 8 )
+anims/WalkSouthEast = SubResource( 9 )
+anims/WalkSouthWest = SubResource( 10 )
+anims/WalkWest = SubResource( 11 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
