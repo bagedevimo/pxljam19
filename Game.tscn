@@ -40,6 +40,7 @@ position = Vector2( 275.292, 230.387 )
 ] instance=ExtResource( 2 )]
 position = Vector2( 275.5, 235.489 )
 z_index = -5
+life_expectancy = 6
 
 [node name="Camera2D" type="Camera2D" parent="Obstacles/Player"]
 position = Vector2( -0.911316, -0.455658 )
@@ -65,9 +66,11 @@ position = Vector2( 729.72, 107.009 )
 number_of_trees = 15
 
 [node name="Barrell1" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 204.363, 374.417 )
 
 [node name="Barrell2" parent="." instance=ExtResource( 4 )]
+visible = false
 position = Vector2( 311.422, 374.417 )
 
 [node name="TutorialTree" parent="." instance=ExtResource( 5 )]
@@ -75,7 +78,7 @@ position = Vector2( 470.694, 487.109 )
 z_index = 10
 
 [node name="Gate" parent="." instance=ExtResource( 6 )]
-position = Vector2( 275.616, 191.333 )
+position = Vector2( 275.616, 201.663 )
 z_index = 10
 
 [node name="Wolf" parent="." instance=ExtResource( 7 )]

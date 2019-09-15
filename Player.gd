@@ -47,6 +47,11 @@ func rebirth():
 func handle_on_death(args):
 	print("I'm dying....", args)
 	$AnimationPlayer.play("Death")
+	var tombstone = load("res://Tombstone.tscn").instance()
+
+	# TODO: transition?
+	tombstone.position = position
+	get_parent().add_child(tombstone)
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
