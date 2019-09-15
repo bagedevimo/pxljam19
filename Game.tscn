@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Barrell.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Gate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Bridge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ForestGenerator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Barrell.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Wolf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Bridge.tscn" type="PackedScene" id=8]
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -29,7 +30,7 @@ cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( -65518, 6, 4, 14, 6, 3, 21, 6, 1, 23, 6, 0, 25, 6, 4, 27, 6, 0, 65550, 6, 4, 65553, 6, 4, 65555, 6, 1, 65556, 6, 0, 65557, 6, 2, 65560, 6, 2, 131094, 6, 4, 131095, 6, 3, 131097, 6, 4, 131099, 6, 4, 196620, 6, 2, 196626, 6, 4, 196628, 6, 2, 196631, 6, 2, 196634, 6, 2, 196636, 6, 2, 262159, 6, 4, 262160, 6, 0, 262162, 6, 2, 262166, 6, 0, 262169, 6, 0, 327699, 6, 0, 327701, 6, 5, 327704, 6, 3, 327705, 6, 2, 327707, 6, 0, 393229, 6, 4, 393236, 6, 1, 393237, 6, 0, 393238, 6, 1, 393239, 6, 4, 393244, 6, 5, 458756, 9, 0, 458759, 5, 2, 458771, 6, 4, 458775, 6, 5, 458777, 6, 1, 458778, 6, 1, 524306, 6, 2, 524309, 6, 2, 524312, 6, 2, 524315, 6, 5, 589847, 6, 5, 589850, 6, 2, 589852, 6, 5, 655378, 6, 5, 655380, 6, 4, 655384, 6, 1, 720917, 6, 3, 720918, 6, 1, 720921, 6, 3, 720923, 6, 0, 786459, 6, 1, 1441846, 8, 0 )
+tile_data = PoolIntArray( 458756, 9, 0, 458759, 5, 2, 1441846, 8, 0 )
 
 [node name="StartingPosition" type="Node2D" parent="Obstacles"]
 position = Vector2( 275.292, 230.387 )
@@ -51,22 +52,34 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Barrell1" parent="." instance=ExtResource( 3 )]
+[node name="ForestGenerator" parent="." instance=ExtResource( 3 )]
+position = Vector2( 508.446, 183.186 )
+number_of_trees = 15
+
+[node name="ForestGenerator2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 733.347, 340.375 )
+number_of_trees = 15
+
+[node name="ForestGenerator3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 729.72, 107.009 )
+number_of_trees = 15
+
+[node name="Barrell1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 204.363, 374.417 )
 
-[node name="Barrell2" parent="." instance=ExtResource( 3 )]
+[node name="Barrell2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 311.422, 374.417 )
 
-[node name="Tree" parent="." instance=ExtResource( 4 )]
+[node name="TutorialTree" parent="." instance=ExtResource( 5 )]
 position = Vector2( 470.694, 487.109 )
 z_index = 10
 
-[node name="Gate" parent="." instance=ExtResource( 5 )]
+[node name="Gate" parent="." instance=ExtResource( 6 )]
 position = Vector2( 275.616, 201.663 )
 z_index = 10
 
-[node name="Wolf" parent="." instance=ExtResource( 6 )]
+[node name="Wolf" parent="." instance=ExtResource( 7 )]
 position = Vector2( 731.925, 561.661 )
 
-[node name="Bridge" parent="." instance=ExtResource( 7 )]
+[node name="Bridge" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1028.29, 554.37 )

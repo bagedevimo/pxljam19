@@ -15,7 +15,7 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 230.031, 367.48, 24, 16 )
 
-[node name="Area2D" parent="." instance=ExtResource( 3 )]
+[node name="Interactable" parent="." instance=ExtResource( 3 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource( 1 )

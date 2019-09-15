@@ -21,6 +21,6 @@ func interact(actor):
 	
 	if self.interacts >= self.requiredInteracts:
 		var logs = load("res://Logs.tscn").instance()
-		logs.position = self.position
+		logs.position = global_position
 		get_tree().get_root().add_child(logs)
 		self.queue_free()
