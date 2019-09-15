@@ -84,6 +84,10 @@ func _physics_process(delta):
 	position.y = clamp(position.y, $Camera2D.limit_top,  $Camera2D.limit_bottom)
 
 func set_focus(target):
+	print("Focus: ", self.focus, self.focus && self.focus.find_node("Interact"))
+	if self.focus && self.focus.find_node("Interact") && self.focus.find_node("Interact").has_method("clear_focus"):
+		self.focus.find_node("Interact").clear_focus()
+
 	self.focus = target
 
 func clear_focus_where(target):
