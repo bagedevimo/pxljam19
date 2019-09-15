@@ -3,7 +3,7 @@
 [ext_resource path="res://Interactable.gd" type="Script" id=1]
 [ext_resource path="res://pixel_style7.png" type="Texture" id=2]
 
-[node name="Area2D" type="Area2D"]
+[node name="Interactable" type="Area2D"]
 collision_layer = 524288
 script = ExtResource( 1 )
 

@@ -5,8 +5,10 @@ extends KinematicBody2D
 
 # Member variables
 const MOTION_SPEED = 360 # Pixels/second
+const MAX_DIST = 65000
 
-var focus = null
+var focusables = []
+var current_focus
 
 export (int) var life_expectancy = 55
 export (int) var year_in_seconds = 10
@@ -82,17 +84,43 @@ func _physics_process(delta):
 	
 	position.x = clamp(position.x, $Camera2D.limit_left, $Camera2D.limit_right)
 	position.y = clamp(position.y, $Camera2D.limit_top,  $Camera2D.limit_bottom)
+	
+	choose_focus()
 
-func set_focus(target):
-	print("Focus: ", self.focus, self.focus && self.focus.find_node("Interact"))
-	if self.focus && self.focus.find_node("Interact") && self.focus.find_node("Interact").has_method("clear_focus"):
-		self.focus.find_node("Interact").clear_focus()
+func add_focusable(focusable):
+	focusables.push_back(focusable)
+	
+	choose_focus()
+	
+func remove_focusable(focusable):
+	focusables.erase(focusable)
+	
+	choose_focus()
+	
+func choose_focus():
+	var best_focus = null
 
-	self.focus = target
+	for focusable in focusables:
+		var dist = position.distance_to(focusable.position)
+		
+		if best_focus == null:
+			best_focus = focusable
+		elif dist < position.distance_to(best_focus.position):
+			best_focus = focusable
+			
+	if current_focus:
+		var old_interactable = current_focus.find_node("Interactable")
+		
+		if old_interactable:
+			old_interactable.set_unfocused()
 
-func clear_focus_where(target):
-	if self.focus == target:
-		self.focus = null
+	current_focus = best_focus
+	
+	if current_focus:
+		var new_interactable = current_focus.find_node("Interactable")
+		
+		if new_interactable:
+			new_interactable.set_focused()
 
 func face_east():
 	$Sprite.region_rect.position.x = 0

@@ -27,7 +27,7 @@ margin_right = 45.1809
 margin_bottom = -33.4751
 text = ""
 
-[node name="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Interactable" parent="." instance=ExtResource( 4 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource( 2 )
