@@ -10,9 +10,6 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Tombstone.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Logs.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Tombstone.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Logs.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Intro.tscn" type="PackedScene" id=11]
 
 [node name="Game" type="Node2D"]
@@ -59,15 +56,9 @@ position = Vector2( 1028.29, 554.37 )
 [node name="UnfinishedDogHouse" parent="Ground" instance=ExtResource( 7 )]
 position = Vector2( 468.15, 328.461 )
 
-[node name="Tombstone" parent="Ground" instance=ExtResource( 8 )]
-position = Vector2( 421.822, 297.886 )
-
-[node name="Logs" parent="Ground" instance=ExtResource( 9 )]
-position = Vector2( 852.182, 615.777 )
-
 [node name="Player" parent="Ground" groups=[
 "player",
-] instance=ExtResource( 10 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 275.5, 235.489 )
 life_expectancy = 6
 
@@ -82,11 +73,11 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Tombstone" parent="." instance=ExtResource( 11 )]
+[node name="Tombstone" parent="Ground" instance=ExtResource( 9 )]
 position = Vector2( 421.822, 297.886 )
 
-[node name="Logs" parent="." instance=ExtResource( 12 )]
+[node name="Logs" parent="Ground" instance=ExtResource( 10 )]
 position = Vector2( 852.182, 615.777 )
 
-[node name="Intro" parent="." instance=ExtResource( 13 )]
+[node name="Intro" parent="." instance=ExtResource( 11 )]
 pause_mode = 2
