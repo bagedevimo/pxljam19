@@ -24,8 +24,8 @@ func _ready():
 
 func _process(delta):
 	if Input.is_action_just_released("ui_select"):
-		if self.focus && self.focus.has_method("interact"):
-			self.focus.interact(self);
+		if current_focus && current_focus.has_method("interact"):
+			current_focus.interact(self);
 
 	seconds_alive += delta
 
