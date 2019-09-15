@@ -15,6 +15,7 @@ export (int) var year_in_seconds = 10
 
 var previous_age = 0
 var seconds_alive = 0
+var can_move = false
 
 func _ready():
 	EventBus.register_listener(self, EventBus.ON_DEATH)
@@ -40,12 +41,11 @@ func age():
 	return floor(seconds_alive / year_in_seconds)
 
 func rebirth():
-	print("in rebirth()")
 	# ON_BIRTH is going to be trigger by animation change from ON_DEATH
 	EventBus.trigger_event(EventBus.ON_DEATH)
 
 func handle_on_death(args):
-	print("I'm dying....", args)
+	can_move = false
 	$AnimationPlayer.play("Death")
 	var tombstone = load("res://Tombstone.tscn").instance()
 
@@ -56,9 +56,10 @@ func handle_on_death(args):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
 		EventBus.trigger_event(EventBus.ON_BIRTH)
+	elif anim_name == "Birth":
+		can_move = true
 
 func handle_on_birth(args):
-	print("I'm reborn....", args)
 	position = get_node("../StartingPosition").position
 
 	seconds_alive = 0
@@ -69,40 +70,37 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_up"):
 		motion += Vector2(0, -1)
-#		$AnimationPlayer.play("WalkNorth")
 	if Input.is_action_pressed("ui_down"):
 		motion += Vector2(0, 1)
-#		$AnimationPlayer.play("WalkSouth")
 	if Input.is_action_pressed("ui_left"):
 		motion += Vector2(-1, 0)
-#		$AnimationPlayer.play("WalkWest")
 	if Input.is_action_pressed("ui_right"):
 		motion += Vector2(1, 0)
-#		$AnimationPlayer.play("WalkEast")
 	if Input.is_action_just_pressed("debug_rebirth"):
 		rebirth()
+
+	if can_move:
+		match motion:
+			Vector2(1, 1):
+				$AnimationPlayer.play("WalkSouthEast")
+			Vector2(0, 1):
+				$AnimationPlayer.play("WalkSouth")
+			Vector2(-1, 1):
+				$AnimationPlayer.play("WalkSouthWest")
+			Vector2(1, -1):
+				$AnimationPlayer.play("WalkNorthEast")
+			Vector2(0, -1):
+				$AnimationPlayer.play("WalkNorth")
+			Vector2(-1, -1):
+				$AnimationPlayer.play("WalkWest")
+			Vector2(-1, 0):
+				$AnimationPlayer.play("WalkWest")
+			Vector2(1, 0):
+				$AnimationPlayer.play("WalkEast")
 	
-	match motion:
-		Vector2(1, 1):
-			$AnimationPlayer.play("WalkSouthEast")
-		Vector2(0, 1):
-			$AnimationPlayer.play("WalkSouth")
-		Vector2(-1, 1):
-			$AnimationPlayer.play("WalkSouthWest")
-		Vector2(1, -1):
-			$AnimationPlayer.play("WalkNorthEast")
-		Vector2(0, -1):
-			$AnimationPlayer.play("WalkNorth")
-		Vector2(-1, -1):
-			$AnimationPlayer.play("WalkWest")
-		Vector2(-1, 0):
-			$AnimationPlayer.play("WalkWest")
-		Vector2(1, 0):
-			$AnimationPlayer.play("WalkEast")
-
-	motion = motion.normalized() * MOTION_SPEED
-
-	move_and_slide(motion)
+		motion = motion.normalized() * MOTION_SPEED
+	
+		move_and_slide(motion)
 	
 	position.x = clamp(position.x, $Camera2D.limit_left, $Camera2D.limit_right)
 	position.y = clamp(position.y, $Camera2D.limit_top,  $Camera2D.limit_bottom)

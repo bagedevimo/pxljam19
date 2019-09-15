@@ -11,10 +11,60 @@ radius = 6.0
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 34.1071, 28.3005, 37.2702, 27.0352, 38.0293, 24.2517, 37.2069, 21.6579, 34.0438, 20.2661, 30.9439, 21.4681, 30.1215, 24.3149, 30.7542, 27.0352 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=12]
+resource_name = "Birth"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 0.217638 ),
+"update": 0,
+"values": [ 0.0, 1440.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=4]
-length = 0.3
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 0.217638 ),
+"update": 0,
+"values": [ 0.0, 1440.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "WalkEast"
@@ -136,13 +186,14 @@ position = Vector2( -34.0352, -24.2928 )
 occluder = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 25.1327
 texture = ExtResource( 4 )
 offset = Vector2( 0, -12 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 32, 32 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Birth = SubResource( 3 )
+anims/Birth = SubResource( 12 )
 anims/Death = SubResource( 4 )
 anims/WalkEast = SubResource( 5 )
 anims/WalkNorth = SubResource( 6 )
