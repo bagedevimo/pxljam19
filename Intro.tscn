@@ -1,0 +1,22 @@
+[gd_scene format=2]
+
+[node name="Intro" type="Node2D"]
+position = Vector2( 100, 100 )
+z_index = 13
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+visible = true
+margin_left = 260.0
+margin_top = 200.0
+margin_right = 726.0
+margin_bottom = 394.0
+popup_exclusive = true
+dialog_text = "There was no one here, and then, there was you.
+This place feels familiar.
+This place is... your place.
+You know you are the only one who is here, who has... ever been here.
+But if that's true, who built that altar?
+Who started whatever that is...
+And why is there a grave?
+WELCOME TO...
+INHERITANCE"

@@ -1,23 +1,26 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://ForestGenerator.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tree.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Gate.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Bridge.tscn" type="PackedScene" id=6]
-[ext_resource path="res://UnfinishedDogHouse.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Tombstone.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Logs.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://ForestGenerator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Wolf.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Bridge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://UnfinishedDogHouse.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Tombstone.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Logs.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Intro.tscn" type="PackedScene" id=12]
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
 [node name="Ground" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 128
 cell_y_sort = true
@@ -28,36 +31,36 @@ tile_data = PoolIntArray( 0, 7, 65537, 1, 7, 65537, 2, 7, 65537, 3, 7, 65537, 4,
 [node name="StartingPosition" type="Node2D" parent="Ground"]
 position = Vector2( 275.292, 230.387 )
 
-[node name="ForestGenerator" parent="Ground" instance=ExtResource( 2 )]
+[node name="ForestGenerator" parent="Ground" instance=ExtResource( 3 )]
 position = Vector2( 508.446, 183.186 )
 number_of_trees = 15
 
-[node name="ForestGenerator2" parent="Ground" instance=ExtResource( 2 )]
+[node name="ForestGenerator2" parent="Ground" instance=ExtResource( 3 )]
 position = Vector2( 733.347, 341.375 )
 number_of_trees = 15
 
-[node name="ForestGenerator3" parent="Ground" instance=ExtResource( 2 )]
+[node name="ForestGenerator3" parent="Ground" instance=ExtResource( 3 )]
 position = Vector2( 729.72, 107.009 )
 number_of_trees = 15
 
-[node name="TutorialTree" parent="Ground" instance=ExtResource( 3 )]
+[node name="TutorialTree" parent="Ground" instance=ExtResource( 4 )]
 position = Vector2( 767.116, 738.641 )
 
-[node name="Gate" parent="Ground" instance=ExtResource( 4 )]
+[node name="Gate" parent="Ground" instance=ExtResource( 5 )]
 position = Vector2( 275.192, 238.623 )
 
-[node name="Wolf" parent="Ground" instance=ExtResource( 5 )]
+[node name="Wolf" parent="Ground" instance=ExtResource( 6 )]
 position = Vector2( 724.85, 481.151 )
 
-[node name="Bridge" parent="Ground" instance=ExtResource( 6 )]
+[node name="Bridge" parent="Ground" instance=ExtResource( 7 )]
 position = Vector2( 1028.29, 554.37 )
 
-[node name="UnfinishedDogHouse" parent="Ground" instance=ExtResource( 7 )]
+[node name="UnfinishedDogHouse" parent="Ground" instance=ExtResource( 8 )]
 position = Vector2( 468.15, 328.461 )
 
 [node name="Player" parent="Ground" groups=[
 "player",
-] instance=ExtResource( 8 )]
+] instance=ExtResource( 9 )]
 position = Vector2( 275.5, 235.489 )
 life_expectancy = 6
 
@@ -72,8 +75,10 @@ drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 
-[node name="Tombstone" parent="." instance=ExtResource( 9 )]
+[node name="Tombstone" parent="." instance=ExtResource( 10 )]
 position = Vector2( 421.822, 297.886 )
 
-[node name="Logs" parent="." instance=ExtResource( 10 )]
+[node name="Logs" parent="." instance=ExtResource( 11 )]
 position = Vector2( 852.182, 615.777 )
+
+[node name="Intro" parent="." instance=ExtResource( 12 )]
