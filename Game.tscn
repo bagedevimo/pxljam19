@@ -19,6 +19,7 @@ __meta__ = {
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 128
+cell_tile_origin = 2
 cell_y_sort = true
 cell_clip_uv = true
 format = 1

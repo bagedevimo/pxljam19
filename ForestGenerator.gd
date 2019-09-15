@@ -14,10 +14,19 @@ func _ready():
 	handle_on_birth(null)
 
 func handle_on_birth(args):
-	print("Generating ", number_of_trees, " trees")
 	randomize()
-	for i in (number_of_trees - $YSort.get_child_count()):
-		
+	
+	var children = get_parent().get_children()
+	var tree_child_count = 0
+	
+	for tree in children:
+		if tree.has_method("is_in_group") && tree.is_in_group("tree" + String(get_instance_id())):
+			tree_child_count += 1
+	
+	var required_trees = number_of_trees - tree_child_count
+	print("Generating ", required_trees, " trees")
+	
+	for i in required_trees:
 		var tries_left = 3
 
 		while tries_left > 0:
@@ -26,15 +35,17 @@ func handle_on_birth(args):
 			var new_pos = Vector2(rand_x, rand_y)
 
 			var alone = true
-			for tree in $YSort.get_children():
-				if tree.position.distance_to(new_pos) < min_distance:
+			for tree in get_parent().get_children():
+				if tree.is_in_group("tree" + String(get_instance_id())) && tree.position.distance_to(new_pos) < min_distance:
 					alone = false
 					break
 
 			if alone:
-				var tree = trees[randi() % trees.size()].instance()
-				tree.position = new_pos
-				$YSort.add_child(tree)
+				var tree : Node2D = trees[randi() % trees.size()].instance()
+				tree.position = new_pos + get_position()
+				tree.add_to_group("tree" + String(get_instance_id()))
+				get_parent().call_deferred("add_child",tree)
+
 				break
 
 			tries_left -= 1
