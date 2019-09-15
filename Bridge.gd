@@ -26,6 +26,9 @@ func interact(actor):
 
 	if logs_retrieved:
 		$Storage.store("logs", logs_retrieved)
+		actor.find_node("Say").play_speech("The bridge grows!")
+	else:
+		actor.find_node("Say").play_speech("I don't have any logs")
 		
 	var progress = ($Storage.quantity("logs") / logs_required)
 	

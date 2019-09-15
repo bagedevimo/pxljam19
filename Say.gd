@@ -1,5 +1,5 @@
 extends Node2D
 
 func play_speech(txt):
-	$Say.text = txt
+	$Label.text = txt
 	find_node("AnimationPlayer").play("Speak")
