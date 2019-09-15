@@ -6,9 +6,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Intro.find_node("AcceptDialog").popup()
-	pass # Replace with function body.
+	get_tree().paused = true
+	$Intro.popup()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_AcceptDialog_confirmed():
+	get_tree().paused = false
