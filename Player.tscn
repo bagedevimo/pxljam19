@@ -189,21 +189,24 @@ script = ExtResource( 1 )
 position = Vector2( 0, -39.3766 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -5 )
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Storage" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -5 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2( -34.0352, -24.2928 )
+position = Vector2( -34.0352, -29.2928 )
 occluder = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.141357, 0 )
 rotation = 25.1327
 texture = ExtResource( 4 )
-offset = Vector2( 0, -12 )
+offset = Vector2( 0, -16 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32, 32 )
 
