@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://ForestGenerator.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Barrell.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Tree.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Gate.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Bridge.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UnfinishedDogHouse.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Wolf.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Bridge.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UnfinishedDogHouse.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Tombstone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Logs.tscn" type="PackedScene" id=10]
 
 [node name="Game" type="Node2D"]
 __meta__ = {
@@ -19,7 +20,6 @@ __meta__ = {
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 128
-cell_tile_origin = 2
 cell_y_sort = true
 cell_clip_uv = true
 format = 1
@@ -40,31 +40,26 @@ number_of_trees = 15
 position = Vector2( 729.72, 107.009 )
 number_of_trees = 15
 
-[node name="Barrell1" parent="Ground" instance=ExtResource( 3 )]
-position = Vector2( 204.363, 374.417 )
+[node name="TutorialTree" parent="Ground" instance=ExtResource( 3 )]
+position = Vector2( 767.116, 738.641 )
 
-[node name="Barrell2" parent="Ground" instance=ExtResource( 3 )]
-position = Vector2( 311.422, 374.417 )
+[node name="Gate" parent="Ground" instance=ExtResource( 4 )]
+position = Vector2( 275.192, 238.623 )
 
-[node name="TutorialTree" parent="Ground" instance=ExtResource( 4 )]
-position = Vector2( 470.694, 487.109 )
+[node name="Wolf" parent="Ground" instance=ExtResource( 5 )]
+position = Vector2( 724.85, 481.151 )
 
-[node name="Gate" parent="Ground" instance=ExtResource( 5 )]
-position = Vector2( 275.616, 191.333 )
-
-[node name="Wolf" parent="Ground" instance=ExtResource( 6 )]
-position = Vector2( 731.925, 561.661 )
-
-[node name="Bridge" parent="Ground" instance=ExtResource( 7 )]
+[node name="Bridge" parent="Ground" instance=ExtResource( 6 )]
 position = Vector2( 1028.29, 554.37 )
 
-[node name="UnfinishedDogHouse" parent="Ground" instance=ExtResource( 8 )]
-position = Vector2( 209.787, 501.191 )
+[node name="UnfinishedDogHouse" parent="Ground" instance=ExtResource( 7 )]
+position = Vector2( 468.15, 328.461 )
 
 [node name="Player" parent="Ground" groups=[
 "player",
-] instance=ExtResource( 9 )]
+] instance=ExtResource( 8 )]
 position = Vector2( 275.5, 235.489 )
+life_expectancy = 6
 
 [node name="Camera2D" type="Camera2D" parent="Ground/Player"]
 position = Vector2( -0.911316, -0.455658 )
@@ -76,3 +71,9 @@ drag_margin_left = 0.0
 drag_margin_top = 0.0
 drag_margin_right = 0.0
 drag_margin_bottom = 0.0
+
+[node name="Tombstone" parent="." instance=ExtResource( 9 )]
+position = Vector2( 421.822, 297.886 )
+
+[node name="Logs" parent="." instance=ExtResource( 10 )]
+position = Vector2( 852.182, 615.777 )
