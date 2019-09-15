@@ -59,8 +59,8 @@ position = Vector2( 468.15, 328.461 )
 [node name="Player" parent="Ground" groups=[
 "player",
 ] instance=ExtResource( 8 )]
-position = Vector2( 275.5, 235.489 )
-life_expectancy = 6
+position = Vector2( 275.093, 239.268 )
+life_expectancy = 3
 
 [node name="Camera2D" type="Camera2D" parent="Ground/Player"]
 position = Vector2( -0.911316, -0.455658 )
