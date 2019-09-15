@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Say.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Character.png" type="Texture" id=3]
+[ext_resource path="res://Character/Girl.png" type="Texture" id=3]
 [ext_resource path="res://Storage.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -90,7 +90,7 @@ rotation = 25.1327
 z_index = 1
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
+region_rect = Rect2( 32, 64, 32, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.424057, 3.09433 )
@@ -107,4 +107,5 @@ anims/Death = SubResource( 3 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 4 )
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
