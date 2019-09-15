@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Wolf.gd" type="Script" id=1]
 [ext_resource path="res://wolfie.png" type="Texture" id=2]
-[ext_resource path="res://Interactable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Say.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactable.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 37.7585
+radius = 35.6285
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -18,7 +19,15 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="Area2D" parent="." instance=ExtResource( 3 )]
+[node name="Say" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_left = 5.18094
+margin_top = -73.4751
+margin_right = 45.1809
+margin_bottom = -33.4751
+text = ""
+
+[node name="Area2D" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )

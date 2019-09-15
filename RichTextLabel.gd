@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends RichTextLabel
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,9 +8,9 @@ extends KinematicBody2D
 func _ready():
 	pass # Replace with function body.
 
+func _process(delta):
+	set_text("Hello")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func interact(actor):
-	$Say.play_speech("Woof woof")
