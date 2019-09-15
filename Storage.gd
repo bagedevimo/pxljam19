@@ -43,3 +43,9 @@ func has(key, amount = null):
 		return false
 	else:
 		return true
+		
+func quantity(key):
+	if !storage.has(key):
+		return 0
+		
+	return storage[key]
