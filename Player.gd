@@ -53,6 +53,7 @@ func handle_on_death(args):
 	tombstone.position = position
 	get_parent().add_child(tombstone)
 
+# Think I broke this
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Death":
 		EventBus.trigger_event(EventBus.ON_BIRTH)
@@ -63,7 +64,7 @@ func handle_on_birth(args):
 	position = get_node("../StartingPosition").position
 
 	seconds_alive = 0
-	$AnimationPlayer.play("Birth")
+	$AnimatedSprite.play("IdleSouth")
 
 func _physics_process(delta):
 	var motion = Vector2()
@@ -82,21 +83,21 @@ func _physics_process(delta):
 	if can_move:
 		match motion:
 			Vector2(1, 1):
-				$AnimationPlayer.play("WalkSouthEast")
+				$AnimatedSprite.play("RunSouthEast")
 			Vector2(0, 1):
-				$AnimationPlayer.play("WalkSouth")
+				$AnimatedSprite.play("RunSouth")
 			Vector2(-1, 1):
-				$AnimationPlayer.play("WalkSouthWest")
+				$AnimatedSprite.play("RunSouthWest")
 			Vector2(1, -1):
-				$AnimationPlayer.play("WalkNorthEast")
+				$AnimatedSprite.play("RunNorthEast")
 			Vector2(0, -1):
-				$AnimationPlayer.play("WalkNorth")
+				$AnimatedSprite.play("RunNorth")
 			Vector2(-1, -1):
-				$AnimationPlayer.play("WalkNorthWest")
+				$AnimationPlayer.play("RunNorthWest")
 			Vector2(-1, 0):
-				$AnimationPlayer.play("WalkWest")
+				$AnimatedSprite.play("RunWest")
 			Vector2(1, 0):
-				$AnimationPlayer.play("WalkEast")
+				$AnimationPlayer.play("RunEast")
 	
 		motion = motion.normalized() * MOTION_SPEED
 	

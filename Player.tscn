@@ -1,9 +1,80 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=79 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Say.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Storage.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Character/Girl.png" type="Texture" id=4]
+[ext_resource path="res://Girl/Idle/north-east-1.png" type="Texture" id=4]
+[ext_resource path="res://Girl/Idle/north-east-2.png" type="Texture" id=5]
+[ext_resource path="res://Girl/Idle/north-east-3.png" type="Texture" id=6]
+[ext_resource path="res://Girl/Idle/west-1.png" type="Texture" id=7]
+[ext_resource path="res://Girl/Idle/west-2.png" type="Texture" id=8]
+[ext_resource path="res://Girl/Idle/west-3.png" type="Texture" id=9]
+[ext_resource path="res://Girl/Run/south-west-1.png" type="Texture" id=10]
+[ext_resource path="res://Girl/Run/south-west-2.png" type="Texture" id=11]
+[ext_resource path="res://Girl/Run/south-west-3.png" type="Texture" id=12]
+[ext_resource path="res://Girl/Run/south-west-4.png" type="Texture" id=13]
+[ext_resource path="res://Girl/Run/south-west-5.png" type="Texture" id=14]
+[ext_resource path="res://Girl/Run/south-west-6.png" type="Texture" id=15]
+[ext_resource path="res://Girl/Run/girl-north-west-1.png" type="Texture" id=16]
+[ext_resource path="res://Girl/Run/girl-north-west-2.png" type="Texture" id=17]
+[ext_resource path="res://Girl/Run/girl-north-west-3.png" type="Texture" id=18]
+[ext_resource path="res://Girl/Run/girl-north-west-4.png" type="Texture" id=19]
+[ext_resource path="res://Girl/Run/girl-north-west-5.png" type="Texture" id=20]
+[ext_resource path="res://Girl/Run/girl-north-west-6.png" type="Texture" id=21]
+[ext_resource path="res://Girl/Run/girl-north-1.png" type="Texture" id=22]
+[ext_resource path="res://Girl/Run/girl-north-2.png" type="Texture" id=23]
+[ext_resource path="res://Girl/Run/girl-north-3.png" type="Texture" id=24]
+[ext_resource path="res://Girl/Run/girl-north-4.png" type="Texture" id=25]
+[ext_resource path="res://Girl/Run/girl-north-5.png" type="Texture" id=26]
+[ext_resource path="res://Girl/Run/girl-north-6.png" type="Texture" id=27]
+[ext_resource path="res://Girl/Idle/north-1.png" type="Texture" id=28]
+[ext_resource path="res://Girl/Idle/north-2.png" type="Texture" id=29]
+[ext_resource path="res://Girl/Idle/north-3.png" type="Texture" id=30]
+[ext_resource path="res://Girl/Idle/north-west-1.png" type="Texture" id=31]
+[ext_resource path="res://Girl/Idle/north-west-2.png" type="Texture" id=32]
+[ext_resource path="res://Girl/Idle/north-west-3.png" type="Texture" id=33]
+[ext_resource path="res://Girl/Run/girl-west-1.png" type="Texture" id=34]
+[ext_resource path="res://Girl/Run/girl-west-2.png" type="Texture" id=35]
+[ext_resource path="res://Girl/Run/girl-west-3.png" type="Texture" id=36]
+[ext_resource path="res://Girl/Run/girl-west-4.png" type="Texture" id=37]
+[ext_resource path="res://Girl/Run/girl-west-5.png" type="Texture" id=38]
+[ext_resource path="res://Girl/Run/girl-west-6.png" type="Texture" id=39]
+[ext_resource path="res://Girl/Run/girl-east-1.png" type="Texture" id=40]
+[ext_resource path="res://Girl/Run/girl-east-2.png" type="Texture" id=41]
+[ext_resource path="res://Girl/Run/girl-east-3.png" type="Texture" id=42]
+[ext_resource path="res://Girl/Run/girl-east-4.png" type="Texture" id=43]
+[ext_resource path="res://Girl/Run/girl-east-5.png" type="Texture" id=44]
+[ext_resource path="res://Girl/Run/girl-east-6.png" type="Texture" id=45]
+[ext_resource path="res://Girl/Run/girl-south-1.png" type="Texture" id=46]
+[ext_resource path="res://Girl/Run/girl-south-2.png" type="Texture" id=47]
+[ext_resource path="res://Girl/Run/girl-south-3.png" type="Texture" id=48]
+[ext_resource path="res://Girl/Run/girl-south-4.png" type="Texture" id=49]
+[ext_resource path="res://Girl/Run/girl-south-5.png" type="Texture" id=50]
+[ext_resource path="res://Girl/Run/girl-south-6.png" type="Texture" id=51]
+[ext_resource path="res://Girl/Idle/south-east-1.png" type="Texture" id=52]
+[ext_resource path="res://Girl/Idle/south-east-2.png" type="Texture" id=53]
+[ext_resource path="res://Girl/Idle/south-east-3.png" type="Texture" id=54]
+[ext_resource path="res://Girl/Idle/east-1.png" type="Texture" id=55]
+[ext_resource path="res://Girl/Idle/east-2.png" type="Texture" id=56]
+[ext_resource path="res://Girl/Idle/east-3.png" type="Texture" id=57]
+[ext_resource path="res://Girl/Idle/south-1.png" type="Texture" id=58]
+[ext_resource path="res://Girl/Idle/south-2.png" type="Texture" id=59]
+[ext_resource path="res://Girl/Idle/south-3.png" type="Texture" id=60]
+[ext_resource path="res://Girl/Idle/south-west-1.png" type="Texture" id=61]
+[ext_resource path="res://Girl/Idle/south-west-2.png" type="Texture" id=62]
+[ext_resource path="res://Girl/Idle/south-west-3.png" type="Texture" id=63]
+[ext_resource path="res://Girl/Run/south-east-1.png" type="Texture" id=64]
+[ext_resource path="res://Girl/Run/south-east-2.png" type="Texture" id=65]
+[ext_resource path="res://Girl/Run/south-east-3.png" type="Texture" id=66]
+[ext_resource path="res://Girl/Run/south-east-4.png" type="Texture" id=67]
+[ext_resource path="res://Girl/Run/south-east-5.png" type="Texture" id=68]
+[ext_resource path="res://Girl/Run/south-east-6.png" type="Texture" id=69]
+[ext_resource path="res://Girl/Run/girl-north-east-1.png" type="Texture" id=70]
+[ext_resource path="res://Girl/Run/girl-north-east-2.png" type="Texture" id=71]
+[ext_resource path="res://Girl/Run/girl-north-east-3.png" type="Texture" id=72]
+[ext_resource path="res://Girl/Run/girl-north-east-4.png" type="Texture" id=73]
+[ext_resource path="res://Girl/Run/girl-north-east-5.png" type="Texture" id=74]
+[ext_resource path="res://Girl/Run/girl-north-east-6.png" type="Texture" id=75]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.0
@@ -11,176 +82,88 @@ radius = 6.0
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 34.1071, 28.3005, 37.2702, 27.0352, 38.0293, 24.2517, 37.2069, 21.6579, 34.0438, 20.2661, 30.9439, 21.4681, 30.1215, 24.3149, 30.7542, 27.0352 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "Birth"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 0.217638 ),
-"update": 0,
-"values": [ 0.0, 1440.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-length = 1.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 0.217638 ),
-"update": 0,
-"values": [ 0.0, 1440.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "WalkEast"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 64, 32, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "WalkNorth"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 32, 0, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "WalkNorthEast"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 64, 0, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "WalkNorthWest"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 0, 0, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=9]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 32, 64, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 64, 64, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 0, 64, 32, 32 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 0, 32, 32, 32 ) ]
-}
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "IdleNorthEast",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "IdleWest",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "RunSouthWest",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "RunNorthWest",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "RunNorth",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "IdleNorth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "IdleNorthWest",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "RunWest",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "RunEast",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "RunSouth",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
+"loop": true,
+"name": "IdleSouthEast",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "IdleEast",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ) ],
+"loop": true,
+"name": "IdleSouth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ) ],
+"loop": true,
+"name": "IdleSouthWest",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "RunSouthEast",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ) ],
+"loop": true,
+"name": "RunNorthEast",
+"speed": 9.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -202,23 +185,8 @@ position = Vector2( 0, -5 )
 position = Vector2( -34.0352, -29.2928 )
 occluder = SubResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -0.141357, 0 )
-rotation = 25.1327
-texture = ExtResource( 4 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "RunWest"
+playing = true
 offset = Vector2( 0, -16 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Birth = SubResource( 3 )
-anims/Death = SubResource( 4 )
-anims/WalkEast = SubResource( 5 )
-anims/WalkNorth = SubResource( 6 )
-anims/WalkNorthEast = SubResource( 7 )
-anims/WalkNorthWest = SubResource( 8 )
-anims/WalkSouth = SubResource( 9 )
-anims/WalkSouthEast = SubResource( 10 )
-anims/WalkSouthWest = SubResource( 11 )
-anims/WalkWest = SubResource( 12 )
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
